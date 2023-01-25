@@ -10,7 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b2c6c914-3a9b-47d8-9254-230b6db9ea7b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/MEDEV_TP_LE_LOCH_FRIGOUT_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/MEDEV_TP_LE_LOCH_FRIGOUT_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/sonarcloud.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/sonarcloud.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
@@ -64,7 +64,7 @@
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2551724",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.runner"
+    "settings.editor.selected.configurable": "reference.settings.project.maven.importing"
   }
 }]]></component>
   <component name="RecentsManager">
