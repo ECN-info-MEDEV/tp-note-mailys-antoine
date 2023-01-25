@@ -1,5 +1,5 @@
 <component name="ArtifactManager">
-  <artifact name="MEDEV_TP_LE-LOCH_FRIGOUT:jar">
+  <artifact build-on-make="true" name="MEDEV_TP_LE-LOCH_FRIGOUT:jar">
     <output-path>$PROJECT_DIR$/out/artifacts/MEDEV_TP_LE_LOCH_FRIGOUT_jar</output-path>
     <root id="root">
       <element id="archive" name="MEDEV_TP_LE-LOCH_FRIGOUT.jar">
