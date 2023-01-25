@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact name="MEDEV_TP_LE-LOCH_FRIGOUT:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/MEDEV_TP_LE_LOCH_FRIGOUT_jar</output-path>
+    <root id="root">
+      <element id="archive" name="MEDEV_TP_LE-LOCH_FRIGOUT.jar">
+        <element id="module-output" name="MEDEV_TP_LE-LOCH_FRIGOUT" />
+      </element>
+    </root>
+  </artifact>
+</component>
