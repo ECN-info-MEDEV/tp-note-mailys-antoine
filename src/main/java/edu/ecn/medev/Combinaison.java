@@ -66,4 +66,29 @@ public class Combinaison {
 
         return getListePion() != null ? getListePion().equals(that.getListePion()) : that.getListePion() == null;
     }
+
+    /**
+     * Méthode pour retourner une combinaison sous forme textuelle.
+     * @return La description textuelle de la combinaison.
+     */
+    public String affiche(){
+        StringBuilder s = new StringBuilder();
+        s.append("|");
+        for(Pion p : this.listePion){
+            if(p == null){
+                s.append(" . |");
+            } else {
+                switch (p.getCouleur()) {
+                    case "rouge" -> s.append(" R |");
+                    case "bleu" -> s.append(" B |");
+                    case "vert" -> s.append(" V |");
+                    case "jaune" -> s.append(" J |");
+                    case "noir" -> s.append(" N |");
+                    case "blanc" -> s.append(" W |");
+                    default -> s.append(" . |");
+                }
+            }
+        }
+        return s.toString();
+    }
 }
