@@ -71,6 +71,7 @@ public class Partie {
         System.out.println("---------------------------------------------------");
         System.out.println("Commençons la partie!");
         System.out.println("---------------------------------------------------");
+        this.nouvelleManche();
     }
 
     /**
@@ -84,9 +85,9 @@ public class Partie {
         System.out.println("---------------------------------------------------");
         Combinaison objectif = new Combinaison();
         if(joueur1 instanceof Codeur){
-            objectif = (Codeur)joueur1.choisirObjectif();
+            objectif = ((Codeur)joueur1).choisirObjectif();
         } else {
-            objectif = (Codeur)joueur2.choisirObjectif();
+            objectif = ((Codeur)joueur2).choisirObjectif();
         }
         this.plateau.setObjectif(objectif);
         for(int tourCourant = 1; tourCourant < 13; tourCourant ++){
@@ -94,37 +95,38 @@ public class Partie {
             Combinaison proposition = new Combinaison();
             Combinaison indication = new Combinaison();
             if(joueur1 instanceof Codeur){
-                System.out.println(joueur2.getName() + " a vous de jouer, voici le plateau...");
+                System.out.println(joueur2.getNom() + " a vous de jouer, voici le plateau...");
                 System.out.println(plateau.affiche());
-                proposition = (Decodeur)joueur2.jouer();
+                proposition = ((Decodeur)joueur2).jouer();
                 this.plateau.getListeTentative().add(proposition);
 
-                System.out.println(joueur1.getName() + " a vous de jouer, voici le plateau...");
+                System.out.println(joueur1.getNom() + " a vous de jouer, voici le plateau...");
                 System.out.println(plateau.affiche());
-                indication = (Codeur)joueur1.jouer(proposition, plateau.getObjectif());
+                indication = ((Codeur)joueur1).jouer(proposition, plateau.getObjectif());
                 this.plateau.getListeIndication().add(indication);
             } else {
-                System.out.println(joueur1.getName() + " a vous de jouer, voici le plateau...");
+                System.out.println(joueur1.getNom() + " a vous de jouer, voici le plateau...");
                 System.out.println(plateau.affiche());
-                indication = (Decodeur)joueur1.jouer(proposition, plateau.getObjectif());
+                indication = ((Codeur)joueur1).jouer(proposition, plateau.getObjectif());
                 this.plateau.getListeIndication().add(indication);
 
-                System.out.println(joueur2.getName() + " a vous de jouer, voici le plateau...");
+                System.out.println(joueur2.getNom() + " a vous de jouer, voici le plateau...");
                 System.out.println(plateau.affiche());
-                proposition = (Codeur)joueur2.jouer();
+                proposition = ((Decodeur)joueur2).jouer();
                 this.plateau.getListeTentative().add(proposition);
             }
 
             if (proposition.equals(plateau.getObjectif())){
                 System.out.println("Victoire !!! Vous avez deviné la combinaison !");
                 this.terminePartie(tourCourant);
+                return;
             }
         }
-        this.terminePartie(tourCourant);
+        this.terminePartie(12);
     }
 
     /**
-     * CEtte méthode gère la fin d'une partie en mettant à jour les scores, puis elle va changer les joeuurs et enfin remettre à vide le plateau.
+     * Cette méthode gère la fin d'une partie en mettant à jour les scores, puis elle va changer les joeuurs et enfin remettre à vide le plateau.
      * @param nbToursJoues Le nombre de tours joues dans la partie.
      */
     public void terminePartie(int nbToursJoues){
@@ -156,13 +158,13 @@ public class Partie {
 
         if(scoreJ1 > scoreJ2){
             System.out.println("---------------------------------------------------");
-            System.out.println(this.joueur1.getName() + " vous avez gagné avec " + this.joueur1.getScore() + " point(s)!");
-            System.out.println(this.joueur2.getName() + " vous avez perdu avec " + this.joueur2.getScore() + " point(s)!");
+            System.out.println(this.joueur1.getNom() + " vous avez gagné avec " + this.joueur1.getScore() + " point(s)!");
+            System.out.println(this.joueur2.getNom() + " vous avez perdu avec " + this.joueur2.getScore() + " point(s)!");
             System.out.println("---------------------------------------------------");
         } else if(scoreJ2 > scoreJ1){
             System.out.println("---------------------------------------------------");
-            System.out.println(this.joueur2.getName() + " vous avez gagné avec " + this.joueur2.getScore() + " point(s)!");
-            System.out.println(this.joueur1.getName() + " vous avez perdu avec " + this.joueur1.getScore() + " point(s)!");
+            System.out.println(this.joueur2.getNom() + " vous avez gagné avec " + this.joueur2.getScore() + " point(s)!");
+            System.out.println(this.joueur1.getNom() + " vous avez perdu avec " + this.joueur1.getScore() + " point(s)!");
             System.out.println("---------------------------------------------------");
         } else {
             System.out.println("---------------------------------------------------");

@@ -110,22 +110,22 @@ public class Codeur extends Joueur {
             System.out.println("Rentrer en toutes lettres la couleur souhaitée pour la boule n° " + (i+1));
             choix = scanner.next();
             if (choix.equals("rouge")){
-                Pion p = new PionIndication("R");
+                Pion p = new PionIndication("rouge");
                 target.setPion(i, p);
             }else if(choix.equals("bleu")){
-                Pion p = new PionIndication("B");
+                Pion p = new PionIndication("bleu");
                 target.setPion(i, p);
             }else if(choix.equals("jaune")){
-                Pion p = new PionIndication("J");
+                Pion p = new PionIndication("jaune");
                 target.setPion(i, p);
             }else if(choix.equals("vert")){
-                Pion p = new PionIndication("V");
+                Pion p = new PionIndication("vert");
                 target.setPion(i, p);
             }else if(choix.equals("blanc")){
-                Pion p = new PionIndication("B");
+                Pion p = new PionIndication("blanc");
                 target.setPion(i, p);
             }else if(choix.equals("noir")){
-                Pion p = new PionIndication("N");
+                Pion p = new PionIndication("noir");
                 target.setPion(i, p);
             }else{
                 i--;
