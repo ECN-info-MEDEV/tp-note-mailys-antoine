@@ -50,6 +50,17 @@ public class Combinaison {
     public void setListePion(ArrayList<Pion> listePion) {
         this.listePion = listePion;
     }
+    
+    /**
+     * Méthode permettant de mettre un pion à la position i dans la combinaison
+     * @param position int, position du pion
+     * @param p Pion, pion à ajouter 
+     */
+    public void setPion(int position, Pion p){
+        this.listePion.set(position, p);
+    }
+    
+
 
     /**
      * Méthode permettant de tester que deux combinaisons sont similaires.
