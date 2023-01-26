@@ -15,7 +15,7 @@ public class PionTest {
     @org.junit.jupiter.api.Test
     void getCouleur() {
         Pion pion = new Pion("jaune");
-        assertEquals(pion.getCouleur(), "jaune");
+        assertEquals("jaune", pion.getCouleur());
     }
 
     /**
@@ -25,7 +25,7 @@ public class PionTest {
     void setExemple() {
         Pion pion = new Pion("bleu");
         pion.setCouleur("bleu");
-        assertEquals(pion.getCouleur(), "bleu");
+        assertEquals("bleu",pion.getCouleur());
     }
     
 }
