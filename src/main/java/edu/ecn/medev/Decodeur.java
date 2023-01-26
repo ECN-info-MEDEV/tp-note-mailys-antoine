@@ -2,6 +2,8 @@
 package edu.ecn.medev;
 
 import java.util.Scanner;
+import edu.ecn.medev.Combinaison ;
+import java.util.ArrayList;
 
 /**
  * Classe fille de Joueur implémentant un joueur dans le rôle du décodeur
@@ -33,18 +35,24 @@ public class Decodeur extends Joueur{
             String choix = ""; 
             System.out.println("Rentrer en toutes lettres la couleur souhaitée pour la boule n° " + (i+1));
             choix = scanner.next();
-            if (choix == "rouge"){
-                tentative.add("R");
-            }else if(choix == "bleu"){
-                tentative.add("B");
-            }else if(choix == "jaune"){
-                tentative.add("J");
-            }else if(choix == "vert"){
-                tentative.add("v");
-            }else if(choix == "blanc"){
-                tentative.add("W");
-            }else if(choix == "noir"){
-                tentative.add("N");
+            if (choix.equals("rouge")){
+                Pion p = new PionIndication("R");
+                tentative.setPion(i, p);
+            }else if(choix.equals("bleu")){
+                Pion p = new PionIndication("B");
+                tentative.setPion(i, p);
+            }else if(choix.equals("jaune")){
+                Pion p = new PionIndication("J");
+                tentative.setPion(i, p);
+            }else if(choix.equals("vert")){
+                Pion p = new PionIndication("V");
+                tentative.setPion(i, p);
+            }else if(choix.equals("blanc")){
+                Pion p = new PionIndication("B");
+                tentative.setPion(i, p);
+            }else if(choix.equals("noir")){
+                Pion p = new PionIndication("N");
+                tentative.setPion(i, p);
             }else{
                 i--;
             }

@@ -1,7 +1,9 @@
 
 package edu.ecn.medev;
 
-import java.util.Scanner;
+import java.util.Scanner ;
+import edu.ecn.medev.Combinaison ;
+import java.util.ArrayList; 
 
 /**
  * Classe fille de Joueur implémentant un joueur dans le rôle du codeur
@@ -37,8 +39,8 @@ public class Codeur extends Joueur {
             // Enregistrement de la combinaison que le codeur propose
             System.out.println("Rentrer la combinaison de 4 pions que vous souhaitez \n"
                     + "Rappel : \n"
-                    + "noir : le décodeur a une boule de bonne couleur au bon endroit \n"
-                    + "blanc : le décodeur a une boule de bonne couleur mais au mauvais endroit \n"
+                    + "N : le décodeur a une boule de bonne couleur au bon endroit \n"
+                    + "B : le décodeur a une boule de bonne couleur mais au mauvais endroit \n"
                     + "nul : la boule n'est pas correcte ");
             Scanner scanner = new Scanner(System.in);
             String choix = ""; 
@@ -46,12 +48,13 @@ public class Codeur extends Joueur {
             while (i != 4){
                 System.out.println("Rentrer le pion n° " + i);
                 choix = scanner.next();
-                result.add(choix);
+                Pion p = new PionIndication(choix);
+                result.setPion(i, p);
                 i++;
-                if (choix == "noir"){
+                if (choix.equals("N")){
                     noirResult ++ ;
                 }
-                if (choix == "blanc"){
+                if (choix.equals("B")){
                     blancResult ++ ;
                 }
             }
@@ -62,12 +65,12 @@ public class Codeur extends Joueur {
             int nul = 0 ; 
 
             for (int k=0;k<=3;k++){
-                if (courante.get(k) == target.get(k)){
+                if (courante.getListePion().get(k) == target.getListePion().get(k)){
                     noir++ ; 
                 }
                 else{
                     for (int j=k+1;j<=3;j++){
-                        if ((courante.get(j) == target.get(k)) && (courante.get(j) != target.get(j))){
+                        if ((courante.getListePion().get(j) == target.getListePion().get(k)) && (courante.getListePion().get(j) != target.getListePion().get(j))){
                             blanc++; 
                         }
                     }
@@ -106,18 +109,24 @@ public class Codeur extends Joueur {
             String choix = ""; 
             System.out.println("Rentrer en toutes lettres la couleur souhaitée pour la boule n° " + (i+1));
             choix = scanner.next();
-            if (choix == "rouge"){
-                target.add("R");
-            }else if(choix == "bleu"){
-                target.add("B");
-            }else if(choix == "jaune"){
-                target.add("J");
-            }else if(choix == "vert"){
-                target.add("v");
-            }else if(choix == "blanc"){
-                target.add("W");
-            }else if(choix == "noir"){
-                target.add("N");
+            if (choix.equals("rouge")){
+                Pion p = new PionIndication("R");
+                target.setPion(i, p);
+            }else if(choix.equals("bleu")){
+                Pion p = new PionIndication("B");
+                target.setPion(i, p);
+            }else if(choix.equals("jaune")){
+                Pion p = new PionIndication("J");
+                target.setPion(i, p);
+            }else if(choix.equals("vert")){
+                Pion p = new PionIndication("V");
+                target.setPion(i, p);
+            }else if(choix.equals("blanc")){
+                Pion p = new PionIndication("B");
+                target.setPion(i, p);
+            }else if(choix.equals("noir")){
+                Pion p = new PionIndication("N");
+                target.setPion(i, p);
             }else{
                 i--;
             }
